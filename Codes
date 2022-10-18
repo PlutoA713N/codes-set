@@ -12,4 +12,19 @@ function digitalCipher(message,key){
 digitalCipher('scout',1939)
 //output -[ 14, 10, 22, 29, 6, 27, 19, 18, 6, 12, 8 ]
 
+function solution(x){
+    let len = x.length;note = '';
+    let str = '+';
+    for(let i=0;i<len;i++){
+        note += (x[i]*Math.pow(10,(len-1)-i)) + str;
+       //console.log(note);
+    }
+    let output = (note.slice(0,note.length-1));
+    //console.log(output)
+    return output;
+}
+solution('666')// 600+60+6
+
+
+
 
