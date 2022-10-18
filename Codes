@@ -38,5 +38,23 @@ function solution(x){
 }
 solution('666') //spaced output;
 
+function maxColumn(arr,n){
+    let len = arr.length;
+    let ar = [];sum = 0,sum1 = 0,sum2 = 0;
+    for(let i=0;i<arr.length;i+=n){
+    ar.push(arr.slice(i,i+n))
+    sum += arr[i]
+    sum1 += arr[i+1]
+    sum2 += arr[i+2]
+    }
+    console.log(ar,sum,sum1,sum2)
+    /*for(let i=0;i<ar.length;i++){
+        for(let j=0;j<n;j++){
+        console.log(ar[j][i], i+1,j+1)
+        }
+    }*/
+}
+maxColumn([4,14,12,7,14,16,5,13,7,16,11,19],4)
+
 
 
