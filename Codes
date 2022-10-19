@@ -105,13 +105,15 @@ function eat(arr){
         if(sum > arr[i+1]){
            sum += arr[i+1]
         }
-         ar.push(sum,arr.slice(i+1))
-            //ar.push(sum,ar.slice(4))
-            break;
-    }  
-    ar = [].concat(ar)
-    console.log(ar)
+        if(sum < arr[i]){
+        var half = arr.slice(i)
+        }
+    }
+      ar.push(sum)
+     ar =   ar.concat(half)
+     let op = ar.filter((v)=> v !== undefined)
+     console.log(op)
+     return op;
 }
 eat([5,3,7])
 eat([5,1,9])
-
