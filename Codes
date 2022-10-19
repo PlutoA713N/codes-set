@@ -203,3 +203,13 @@ function solve(str) {
            return sb
        }
       solve("19-Love 10-I 2001-cricket");
+
+function count(str){
+var num = str.match(/[A-Z]/g)
+var lower = str.match(/[a-z]/g)
+let char = 'abcdefghijklmnopqrstuvwxyz'
+let upper = char.toUpperCase()
+let map = num.map((v)=> upper.indexOf(v)+1)
+console.log(num,lower,map)
+}
+count("abc ABC Abc")
