@@ -151,3 +151,26 @@ function maxSubarray(arr,n,m)
     }
     return maxim;
 }
+
+
+//string
+function compareStrings(a,b){
+    var ar = []
+    let i = 0
+    while(b.length > 0){
+        if(a[i] < b[i] || a[i] == b[i]){
+            ar.push(a[i])
+           a = a.replace(a[i],'')
+         // console.log(ar)
+        }
+        if(a[i] > b[i]){
+            ar.push(b[i])
+          b =  b.replace(b[i],'')
+          //console.log(ar)
+    }
+    if( a.length == 0 || b.length== 0) break;
+    }
+    console.log(ar.concat(b.split('')))
+    
+}
+compareStrings('ACA','BCF')
