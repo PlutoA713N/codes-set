@@ -117,3 +117,37 @@ function eat(arr){
 }
 eat([5,3,7])
 eat([5,1,9])
+
+function maxSubarray(arr,n,m)
+{
+
+    let x = 0;
+
+    let prefix = 0;
+
+    let maxim = 0;
+
+    let S = new Set();
+    S.add(0);
+   // Traversing the arr
+    for (let i = 0; i < n; i++)
+    {
+     // Finding prefix sum.
+      prefix = (prefix + arr[i]) % m;
+      maxim = Math.max(maxim, prefix);
+
+
+      let it = 0;
+      for (let j of S.values())
+      {
+        if (j >= prefix + 1)
+          it = j;
+      }
+      if (it != 0)
+      {
+        maxim = Math.max(maxim, prefix - it + m);
+      }
+      S.add(prefix);
+    }
+    return maxim;
+}
