@@ -98,3 +98,20 @@ function shopping(arr,n){
 }
 shopping([2,1,2,5,4,3,6,1,1,9,3,2],4)  
 
+
+function eat(arr){
+    let ar = [],sum = arr[0];
+    for (let i=0;i<arr.length;i++){
+        if(sum > arr[i+1]){
+           sum += arr[i+1]
+        }
+         ar.push(sum,arr.slice(i+1))
+            //ar.push(sum,ar.slice(4))
+            break;
+    }  
+    ar = [].concat(ar)
+    console.log(ar)
+}
+eat([5,3,7])
+eat([5,1,9])
+
