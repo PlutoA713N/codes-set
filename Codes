@@ -88,3 +88,13 @@ function text(str){
 }
 text("mubashirh")
 text("mattLooph")
+
+
+function shopping(arr,n){
+    let sum = arr.reduce((a,b)=> a+b)
+    let weight = n * 10
+   return (sum <= weight ? 'true' : 'false')
+    //console.log(sum,weight)
+}
+shopping([2,1,2,5,4,3,6,1,1,9,3,2],4)  
+
