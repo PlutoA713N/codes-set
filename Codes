@@ -174,3 +174,32 @@ function compareStrings(a,b){
     
 }
 compareStrings('ACA','BCF')
+
+
+//Jumbling strings
+function solve(str) {
+    let arr = str.split(" ");
+      let pq = []
+           for (let i = 0; i < arr.length;
+               i++) {
+               let s = arr[i];
+               let N = "";
+               let a = 0;
+               while (s.charAt(a) != '-') {
+                   N += s.charAt(a);                  a++;
+               }
+               let num = parseInt(N);
+               let word = s.slice(a + 1);
+               pq.push({ 'first': num, 'second': word });
+           }
+           pq.sort(function (a, b) { return a.first - b.first })
+           let sb = "";
+           let k = 0;
+           while (k < pq.length) {
+               sb += pq[k].second + " ";
+               k++;
+           }
+        console.log(sb)
+           return sb
+       }
+      solve("19-Love 10-I 2001-cricket");
