@@ -99,6 +99,9 @@ function shopping(arr,n){
 shopping([2,1,2,5,4,3,6,1,1,9,3,2],4)  
 
 
+
+
+
 function eat(arr){
     let ar = [],sum = arr[0];
     for (let i=0;i<arr.length;i++){
@@ -288,3 +291,47 @@ function Balanced_Substring(str, n)
  
 
     let n = str.length;
+
+
+
+//Burgers sol
+function maxLoot(hval,n)
+{
+
+    // base case
+
+    if (n < 0) {
+
+        return 0;
+
+    }
+ 
+
+    if (n == 0) {
+
+        return hval[0];
+
+    }
+
+    // if current element is pick then previous cannot be
+
+    // picked
+
+    let pick = hval[n] + maxLoot(hval, n - 2);
+
+    // if current element is not picked then previous
+
+    // element is picked
+
+    let notPick = maxLoot(hval, n - 1);
+ 
+
+    // return max of picked and not picked
+
+    return Math.max(pick, notPick);
+}
+ 
+// Driver to test above code
+ 
+let hval = [ 6, 7, 1, 3, 8, 2, 4 ];
+let n = hval.length;
